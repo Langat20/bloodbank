@@ -1,0 +1,506 @@
+{% load static %}
+<!DOCTYPE html>
+
+ <head>
+    <style>
+      .hero-section {
+        background-image: url("https://images.unsplash.com/photo-1542884748-2b87b36c6b90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGJsb29kJTIwZG9uYXRpb258ZW58MHx8MHx8&w=1000&q=80");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        height: 100%;
+      }
+      .overlay{
+        background-color:  #031F42;
+        position: absolute;
+        opacity: .7;
+        /* overflow: hidden; */
+        height: 100%;
+        width: 100%;
+      }
+      .group-text{
+        z-index: 6;
+      }
+      .hero-text-heading-small {
+        margin: 100px 0 30px 0;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 37.5px;
+        color: white;
+      }
+      .hero-btn {
+        background-color: var(--main-color);
+        padding: 10px 10px;
+        font-size: 14px;
+        text-align: center;
+        color: #0a0c1c;
+        margin-top: 30px;
+        margin-bottom: 170px;
+        border: none;
+        height: 60px;
+        width: 190px;
+        font-weight: 700;
+      }
+      .hero-text-heading {
+        font-size: 80px;
+        font-weight: 700;
+        line-height: 80px;
+        color: white;
+      }
+      .hero-btn:hover {
+        color: var(--main-color);
+        background-color: white;
+        border: 1px solid var(--main-color);
+      }
+      .horizontal-rule {
+        background-color: #0a0a0a;
+        min-height: 10px;
+        margin-top: 1px;
+        cursor: pointer;
+        width: 65%;
+      }
+      .horizontal-rule-2nd {
+        background-color: #050505;
+        min-height: 10px;
+        margin-top: 1px;
+        cursor: pointer;
+        width: 90%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+      }
+      /* .big-circle{
+      } */
+
+
+      .services-section {
+        background-image: url(/assets/images/service-bg.jpg);
+        background-repeat: no-repeat;
+      
+        background-size: cover;
+        height: 100%;
+        padding: 0 0 160px 0;
+        
+      }
+      
+      .service-card-title {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 40px;
+      }
+      .service-card-text {
+        color: #707070;
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+        line-height: 30px;
+        margin: 20px 0;
+      }
+      .hero-button {
+        font-family: Antonio, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 28px;
+        padding: 5px 20px 5px 0;
+        background-color: transparent;
+        border: none;
+      }
+      .service-card {
+        width: 350px;
+        padding: 60px 47px 60px 47px;
+        margin-top: -100px;
+      }
+      /* I need to get a hover for the card such that all the text-color changes to white */
+      .card-text:hover{
+          color: white;
+      }
+      .hero-button:hover{
+          color: white;
+      }
+      .card:hover {
+        color: white;
+        background-color: red;
+      }
+      
+      .card-section-p-text {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 30px;
+        color: #0a0c1c;
+        margin-top: 30px;
+      }
+
+
+
+      .team-section {
+        height: 975.838px; 
+        padding: 140px 0 140px 0;
+        background-color: rgba(255, 0, 0, 0.822);
+        /* background-image: url(/assets/images/team-bg.jpg); */
+        /* background-position: 50% 50%; */
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* height: 100%; */
+      }
+      .team-group-text {
+        font-size: 15px;
+        line-height: 26.25px;
+        text-align: center;
+      }
+      .team-team-heading {
+        margin: 0 0 15px 0;
+        color: var(--main-color);
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+      }
+      .team-team-subheading {
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 80px;
+        color: white;
+        margin-bottom: 90px;
+      }
+      .container {
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      /* .image {
+        margin: ;
+      } */
+      
+      .overlay2 {
+        position: absolute; 
+        bottom: 0; 
+        color: #f1f1f1; 
+        position: absolute;
+        top: 80%;
+        left: 54%;
+        transform: translate(-50%, -50%);
+        height: 150px;
+        width: 300px;
+        border-radius: 150px 150px 0 0;
+        transition: .5s ease;
+        opacity:0;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        text-align: center;
+        
+      }
+      .team-para{
+       display: flex;
+       margin-top: 80px;
+       justify-content: center;
+      }
+      
+      .container:hover .overlay {
+        opacity: 1;
+      }
+
+      ul li a{
+        text-decoration: none;
+      }
+
+
+      .footer {
+        background-color: #FFDDD2;
+        color:black;
+        padding: 20px;
+      }
+      .fa-facebook {
+        color: rgb(12, 12, 250);
+        font-size: 35px;
+      }
+      .fa-whatsapp {
+        color: rgb(17, 243, 17);
+        font-size: 35px;
+      }
+      .fa-twitter {
+        color: blue;
+        font-size: 35px;
+      }
+      .fa-youtube {
+        color: red;
+        font-size: 35px;
+      }
+      #media {
+        display: flex;
+        justify-content: space-around;
+      }
+      #footer {
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+      }
+      .navbar-nav a {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        align-items: center;
+        font-size: 16px;
+        color: white;
+      }
+      .navbar {
+        justify-content: space-between;
+        background-color: #5C3D2E;
+        color: white;
+      }
+      #nav0 {
+        justify-content: space-between;
+        position: absolute;
+        right: 20px;
+        top: 0;
+        margin-top: 10px;
+      }
+      #media {
+        display: flex;
+        justify-content: space-around;
+      }
+      .patners {
+        display: flex;
+        justify-content: space-around;
+        background-color: white;
+      }
+      .patners img {
+        width: 100px;
+        height: 50px;
+      }
+      .copyright {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+      }
+
+      
+
+      </style>
+      
+</head> 
+
+
+
+  {% include "blood/navbar.html" %}
+{% comment %} <br>
+<section id="section-jumbotron" style="margin-bottom: 0px;" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center xyz">
+    <div class="container text-center">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+     
+      
+      <br><br><br><br>
+      
+    </div>  
+  </section>
+
+
+  <div class="jumbotron" style="margin-top: 0px;margin-bottom: 0px;">
+
+    <p class="lead text-center">Welcome To Blood Bank Management System
+      </p>
+    
+    <p class="text-center">- Available Features: Patient Login, Donor Login, Admin Login -</p>
+    
+  </div>
+
+
+  <div>
+
+  </div> {% endcomment %}
+
+  <br><br>
+  <section
+    class="hero-section">
+      <div class="overlay"></div>
+  
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 group-text" style="margin-top: 80px;">
+            <h2 class="hero-text-heading">SAVE A LIFE DONATE BLOOD</h2>
+          <hr class="horizontal-rule opacity-100"/> 
+            <!-- <hr class="horizontal-rule-2nd opacity-100" /> -->
+            <h3 class="hero-text-heading-small">One pant of blood can save a life</h3>
+            <!-- <Button class="hero-btn" style="color: white; background-color: red;border-radius: 10px;">DONATE NOW </Button> -->
+            <div class="col-md-4" style="color: red;font-size: 16px;" id="marquee" >
+              <div><Button class="hero-btn" style="color: white; background-color: red;border-radius: 10px;">DONATE NOW </Button></div>
+              <h3>Emergency?<br>Call This Number</h3>
+              <marquee behavior="alternate" derection="up" scrollamount="2" id="marquee" style="font-size:x-large ;">:- 999 / 112 / 911</marquee>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="circle"></div>
+  </section>
+
+<br><br><br><br><br>
+  
+<h1 style="text-align: center;color: red;margin: 2px;padding-top:-4%;">WAYS TO HELP</h1>
+
+
+
+<body>
+
+  
+  <section class="services-section" style="padding-top: 8%;">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card service-card">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="https://thumbs.dreamstime.com/z/african-american-volunteer-group-19404483.jpg"
+                  class="card-img-top" alt="..." style="height: 170px;"/>
+                
+              </div>
+              <div class="col-md-6">
+                <img src="https://i.pinimg.com/736x/ca/ea/1d/caea1d562797dee2e08cc1a08641a51f.jpg" class="card-img-top"
+                  alt="..." style="height: 170px;"/>
+  
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title service-card-title">Volunteer Team</h5>
+              <p class="card-text service-card-text">
+                Organize and participate in activities to celebrate World Blood Donor Day, promoting voluntary unpaid blood donation to the public, across government and to other sectors.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card service-card">
+            <img
+              src="https://nypost.com/wp-content/uploads/sites/2/2017/11/171128-charities-give-money-feature.jpg?quality=75&strip=all"
+              class="card-img-top" alt="..." style="height: 170px;"/>
+            <div class="card-body">
+              <h5 class="card-title service-card-title">Donate Money</h5>
+              <p class="card-text service-card-text">
+                Donate today to support humanitarian work around Kenya. In times of crisis, we meet the urgent needs of women, men, young and the old.Your contribution can make a difference.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card service-card">
+            <img src="https://options.co.uk/sites/default/files/styles/newsheaderimg/public/dsc_0379.jpg?itok=cESI1I4R"
+              class="card-img-top" alt="..." style="height: 170px;"/>
+            <div class="card-body">
+              <h5 class="card-title service-card-title"> Donation Campaign</h5>
+              <p class="card-text service-card-text">
+                Support the development of nationally coordinated blood transfusion services that provide equitable access to safe and quality assured blood transfusions for the whole populatio
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <p class="card-section-p-text" style="color: red;">YOU DONT HAVE TO BE A DOCTOR TO SAVE LIVES<br>JUST DONATE BLOOD</p>
+      </div>
+    </div>
+  </section>
+
+    <br><br><br><br>
+
+    <section class="team-section">
+      <h1 style="text-align: center;color:white; font-weight: bold;">OUR TEAM</h1>
+      <br><br>
+      <div class="row" style="margin-left:8%;">
+        <div class="col-sm-3">
+          <div class="card" style="width: 18rem;">
+            <img src="https://media.istockphoto.com/photos/portrait-of-young-cheerful-african-american-woman-picture-id1207862195?k=20&m=1207862195&s=612x612&w=0&h=wc4k19nXnnogwobNULIwChFpDDZ9dgH5q0BACGs8gyA=" class="card-img-top" alt="..." height="300px">
+            <div class="card-body">
+              <h1 style="text-align: center;font-size: 16px; color: red;">Becky Ocholla</h1>
+              <p class="card-text">Becky Ocholla is the Secretary General of BBMS. She has over 25 years diverse experience working within Humanitarian and Government institutions..</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card" style="width: 18rem;">
+            <img src=" https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png" class="card-img-top" alt="..." height="300px">
+            <div class="card-body">
+              <h1 style="text-align: center;font-size: 16px; color: red;">Evans Kipkurui</h1>
+              <p class="card-text">Evans Kipkurui is Deputy Secretary General and Executive Director International Centre for Humanitarian Affairs (ICHA) at the BBMS. </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card" style="width: 18rem;">
+            <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"class="card-img-top" alt="..." height="300px">
+            <div class="card-body">
+              <h1 style="text-align: center;font-size: 16px; color: red;">Denise Kisavi</h1>
+              <p class="card-text">Denis Kisavi is the Head of National Development/He is also the national youth manager with over 10 years experience in management.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card" style="width: 18rem;">
+            
+            <img src="https://media.istockphoto.com/photos/portrait-of-young-businesswoman-picture-id1191815038?k=20&m=1191815038&s=612x612&w=0&h=9lPl45YprA23YTu4NE1p9a9S52Fwt7Cst1LI2Q8aeL8=" class="card-img-top" alt="..." height="300px">
+            <div class="card-body">
+              <h1 style="text-align: center;font-size: 16px; color: red;">Nancy Mwende</h1>
+              <p class="card-text">Nancy Mwende is the Deputy Secretary General of BBMS in charge of programs. She has over 17 years' experience in development and humanitarian. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+<br><br>
+      <div class="footer-bg-image">
+        <footer class="w-100 py-4 flex-shrink-0 " style="background-color: #FFDDD2;">
+          <div class="container py-4">
+            <div class="row gy-4 gx-5 footer-group">
+              <div class="col-lg-3 col-md-6">
+                <p class="footer-contact-tel">+234 7 458 6545</p>
+                <p class="footer-contact-email">info@example.com</p>
+                <div class="footer-social-icons">
+                  <a href="#">
+                    <i class="bi bi-facebook social-icons"></i>
+                    <i class="bi bi-twitter mx-3 social-icons"></i>
+                    <i class="bi bi-linkedin social-icons"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-6">
+                <h4 class="footer-head-link">useful links</h4>
+                  <h6><a href="#">Terms & Conditions</a></h6>
+                  <h6><a href="#">Company</a></h6>
+                  <h6><a href="#">Payment Gatway</a></h6>
+                  <h6><a href="#">Policy</a></h6>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <h4 class="footer-head-link">services</h4>
+                  <h6><a href="#">Web Design</a></h6>
+                  <h6><a href="#">App Design</a></h6>
+                  <h6><a href="#">App Development</a></h6>
+                  <h6><a href="#">Networking</a></h6>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <h5 class="footer-head-links">Newsletter</h5>
+                <p class="small footer-text">
+                  Sign up for our latest news and updates
+                </p>
+                <form action="#">
+                  <div class="input-group mb-3">
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Your Email"
+                      aria-label="Your Email"
+                      aria-describedby="button-addon2"
+                    />
+                    <button
+                      class="btn button-addon"
+                      id="button-addon2"
+                      type="button"
+                    >
+                      <i class="bi bi-send footer-send-icon"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+         
+        </footer>
+        
+      </div>
+    </section>
+</body>
+</html>
